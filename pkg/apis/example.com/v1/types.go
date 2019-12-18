@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"github.com/openshift-evangelists/crd-code-generation/pkg/apis/common"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -21,6 +22,8 @@ type DatabaseSpec struct {
 	User     string `json:"user"`
 	Password string `json:"password"`
 	Encoding string `json:"encoding,omitempty"`
+
+	Properties common.Unstructured
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
